@@ -2,7 +2,7 @@
 
 Airavata Managed File Transfer is a standalone service to orchestrate data movement between various cloud and high performance computing storages. The MFT Portal provides a dashboard to monitor and users to request the transfers. 
 
-## Getting Started
+### Getting Started
 
 1.  Checkout this project and create a virtual environment.
 
