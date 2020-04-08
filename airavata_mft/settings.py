@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'apps.mft_agents'
+    'airavata_mft.apps.workspace'
 ]
 
 MIDDLEWARE = [
@@ -56,7 +56,7 @@ ROOT_URLCONF = 'airavata_mft.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['apps.mft_agents.templates', 'airavata_mft/templates'],
+        'DIRS': [os.path.join(BASE_DIR, "airavata_mft", "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
