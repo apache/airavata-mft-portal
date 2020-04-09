@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'airavata_mft.apps.workspace'
+    'airavata_mft.apps.workspace.apps.WorkspaceConfig'
 ]
 
 MIDDLEWARE = [
