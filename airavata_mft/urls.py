@@ -18,5 +18,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('agents/', include('apps.mft_agents.urls'))
+    path('workspace/', include('airavata_mft.apps.workspace.urls'))
 ]
