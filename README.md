@@ -17,4 +17,6 @@ Airavata Managed File Transfer is a standalone service to orchestrate data movem
     ```
     python manage.py runserver
     ```
-3. Point your browser to http://localhost:8000/
+
+3. Point your browser to http://localhost:8000/workspace/storage/
+
