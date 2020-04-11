@@ -1,3 +1,20 @@
-{% extends "base.html" %}
+{#{% extends "base.html" %}#}
+
+{% load render_bundle from webpack_loader %}
+<div id="storage"></div>
+
+{% render_bundle "chunk-vendors" %}
+{% render_bundle "storage" %}
+
 {% block app %}
+
+    <div id="storage"></div>
+
 {% endblock app %}
+
+<!--- This has to go to vue file--->
+<style>
+    .storage-progress {
+        width: 20%;
+    }
+</style>
