@@ -5,8 +5,6 @@ module.exports = {
   productionSourceMap: false,
   pages: {
     app: "./js/main.js",
-    cms: "./js/cms.js",
-    notices: "./js/notices.js"
   },
   configureWebpack: {
     plugins: [
