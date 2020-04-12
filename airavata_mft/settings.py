@@ -14,7 +14,6 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-FRONTEND_DIR = os.path.join(BASE_DIR, 'airavata_mft', 'apps', 'workspace')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -129,6 +128,16 @@ STATIC_URL = '/static/'
 # Webpack loader
 WEBPACK_LOADER = {
     'DEFAULT': {
+        'BUNDLE_DIR_NAME': 'common/dist/',
+        'STATS_FILE': os.path.join(
+            BASE_DIR,
+            'airavata_mft',
+            'static',
+            'common',
+            'dist',
+            'webpack-stats.json'),
+    },
+    'WORKSPACE': {
         'BUNDLE_DIR_NAME': 'airavata_mft_workspace/dist/',
         'STATS_FILE': os.path.join(
             BASE_DIR,
