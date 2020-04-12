@@ -12,6 +12,10 @@ Airavata Managed File Transfer is a standalone service to orchestrate data movem
     source venv/bin/activate
     pip install -r requirements.txt
     ```
+2. Build js files
+    ```
+    ./build_js.sh
+    ```
 2.  Run the server
 
     ```
