@@ -5,9 +5,9 @@
 
 {% block scripts %}
     {% render_bundle "chunk-vendors" config='WORKSPACE'%}
-    {% render_bundle "storage" config='WORKSPACE'%}
+    {% render_bundle "storageResources" config='WORKSPACE'%}
 {% endblock scripts %}
 {% block app %}
-    <div id="storage" data-storage-list="{{ data }}"></div>
+    <div id="resources" data-resources-list="{{ data }}"></div>
 {% endblock app %}
 

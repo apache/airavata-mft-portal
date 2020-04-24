@@ -10,6 +10,7 @@ module.exports = {
   productionSourceMap: false,
   pages: {
       'storage': './static/airavata_mft_workspace/js/entry-view-storage',
+      'storageResources': './static/airavata_mft_workspace/js/entry-view-resources',
   },
   configureWebpack: {
     plugins: [

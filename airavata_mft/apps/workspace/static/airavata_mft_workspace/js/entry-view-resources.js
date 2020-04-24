@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import storage from "./containers/Storage"
+import StorageResources from "./containers/StorageResources"
 import { BootstrapVue } from 'bootstrap-vue'
 
 // Install BootstrapVue
@@ -11,22 +11,22 @@ window.onload = function(){
 
       new Vue({
         render(h) {
-          return h(storage, {
+          return h(StorageResources, {
               props: {
-                initialStorageList: this.storageList
+                resourcesList: this.resourcesList
               }
             });
 
         },
         data() {
           return {
-            storageList: null
+            resourcesList: null
           };
         },
         beforeMount() {
-          if (this.$el.dataset.storageList) {
-            this.storageList = JSON.parse(this.$el.dataset.storageList);
+          if (this.$el.dataset.resourcesList) {
+            this.resourcesList = JSON.parse(this.$el.dataset.resourcesList);
           }
         }
-      }).$mount("#storage");
+      }).$mount("#resources");
 };
