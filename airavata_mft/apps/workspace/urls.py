@@ -1,7 +1,7 @@
 from . import views
-from django.urls import path, re_path
+from django.conf.urls import url
 
 urlpatterns = [
-    path('storage/', views.storage),
-    re_path(r'^storage/ssh-storage1', views.resource) #TODO: correct this
+    url(r'^storage/$', views.storage),
+    url(r'^storage/(?P<storage_id>[^/]+)/$', views.resources)
 ]

@@ -13,19 +13,24 @@ window.onload = function(){
         render(h) {
           return h(storage, {
               props: {
-                initialStorageList: this.storageList
+                initialStorageList: this.storageList,
+                title: this.title
               }
             });
 
         },
         data() {
           return {
-            storageList: null
+            storageList: null,
+            title: 'Storage Units'
           };
         },
         beforeMount() {
           if (this.$el.dataset.storageList) {
             this.storageList = JSON.parse(this.$el.dataset.storageList);
+          }
+          if(this.$el.dataset.title) {
+              this.title = JSON.parse(this.$el.dataset.title);
           }
         }
       }).$mount("#storage");

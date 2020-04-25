@@ -10,13 +10,17 @@ def storage(request):
                     {"storageId": "ssh-storage1", "name": "ssh-storage1", "size": "15GB", "occupied": "10GB", "lastModified":"26, March 2020", "host": "scp2", "port": 22, "user": "root"},
                     {"storageId": "ssh-storage1", "name": "ssh-storage1", "size": "15GB", "occupied": "10GB", "lastModified":"26, March 2020"}]
 
-    return render(request, 'storage.html', {'data': json.dumps(storage_json)})
+    return render(request, 'storage.html', {'bundle_name': 'storage',
+                                            'data': json.dumps(storage_json),
+                                            'title': 'Storage Unit'})
 
 
-def resource(request):
+def resources(request, storage_id):
     resource_json = [{"resourceId": "resource1", "name": "resource1"},
                      {"resourceId": "resource1", "name": "resource1"},
                      {"resourceId": "resource1", "name": "resource1"},
                      {"resourceId": "resource1", "name": "resource1"}]
-    return render(request, 'resources.html', {'data': json.dumps(resource_json)})
+    return render(request, 'resources.html', {'bundle_name': 'resources',
+                                              'data': json.dumps(resource_json),
+                                              'title': 'Storage Unit > ' + storage_id})
 

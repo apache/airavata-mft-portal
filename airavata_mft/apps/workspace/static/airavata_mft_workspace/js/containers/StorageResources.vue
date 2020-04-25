@@ -1,5 +1,9 @@
 <template>
-    <div id="resources">
+    <div class="container">
+    <div class="row">
+        <div class="col-8">
+            <h1 class="h4 mb-4">{{heading}}</h1>
+        </div>
         <table class="table table-hover">
                 <thead>
                     <tr>
@@ -19,16 +23,18 @@
                     </tr>
                   </tbody>
                 </table>
+        </div>
     </div>
 </template>
 
 <script>
     export default {
         name: "StorageResources.vue",
-        props: ["resourcesList"],
+        props: ["resourcesList", "title"],
         data: function(){
             return {
-                resources: this.resourcesList
+                resources: this.resourcesList,
+                heading: this.title
             }
         },
     }

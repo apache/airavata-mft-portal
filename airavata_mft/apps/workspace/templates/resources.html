@@ -1,13 +1,6 @@
 {% extends "container-header.html" %}
 
-{% load static %}
-{% load render_bundle from webpack_loader %}
-
-{% block scripts %}
-    {% render_bundle "chunk-vendors" config='WORKSPACE'%}
-    {% render_bundle "storageResources" config='WORKSPACE'%}
-{% endblock scripts %}
 {% block app %}
-    <div id="resources" data-resources-list="{{ data }}"></div>
+    <div id={{ bundle_name }} data-resources-list="{{ data }}" data-title ="{{ title }}"></div>
 {% endblock app %}
 
