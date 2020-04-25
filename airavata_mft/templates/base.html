@@ -1,7 +1,7 @@
 {% load render_bundle from webpack_loader %}
 <!DOCTYPE html>
 <head>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 {% block scripts %}
 {% endblock scripts %}
@@ -9,7 +9,117 @@
 {% render_bundle 'app' config='DEFAULT'%}
 <body>
 <!-- TODO : header and side navigation bar" -->
-<p> This is the header</p>
-{% block app %}
-{% endblock app %}
+    <nav class="navbar navbar-light header shadow-sm">
+        <div class="container-fluid">
+            <div class="col-2">
+                <a class="navbar-brand" href="#">
+                    <div class="row">
+                        <div class="col-5">
+                            <img class="logo" src="/static/images/airavata-logo.png">
+                        </div>
+                        <div>
+                            <div class="col-8">
+                                <div class="row" style="height: 15px">
+                                    <span class="header-text" style="font-size: smaller">APACHE</span>
+                                </div>
+                                <div class="row">
+                                    <span class="header-text" style="font-size: larger">AIRAVATA</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-8" style="padding-left: 0%">
+                <div class="form-group has-search">
+                    <span class="fa fa-search form-control-feedback"></span>
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+            </div>
+            <div class="col-2">
+                <div class="row">
+                    <i class="fa fa-user-circle fa-2x"></i>
+                    <div class="dropdown">
+                        <a class="btn dropdown-toggle header-drop-down" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User name</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-2" style="padding-top: 1.5%">
+            <nav class="nav flex-column">
+                <div style="background-color: lightblue"><a class="c-nav__item selected-nav" href="#"><b>Storage Units</b></a></div>
+                <div style="background-color: lightblue"><a class="c-nav__item" href="#"><b>Users</b></a></div>
+                <div style="background-color: lightblue"><a class="c-nav__item" href="#"><b>Agents</b></a></div>
+                <div style="background-color: lightblue"><a class="c-nav__item" href="#"><b>Audit</b></a></div>
+            </nav>
+        </div>
+        <div class="col-10" style="padding-top: 1.5%">
+            {% block app %}
+            {% endblock app %}
+        </div>
+    </div>
+
+</div>
 </body>
+
+<style>
+    .selected-nav{
+        margin-right: 0.5em;
+        color: lightblue;
+        padding: 1em;
+        font-size: 1rem;
+        display: block;
+    }
+    .c-nav__item {
+        color: grey;
+        padding: 1em;
+        font-size: 1rem;
+        display: block;
+        background-color: white;
+    }
+    .header {
+        background-color: white;
+        padding-top: 2%;
+    }
+    .logo{
+        height: 57px;
+    }
+    .header-text{
+        color: grey;
+    }
+
+    /* Bootstrap 4 text input with search icon */
+
+    .has-search {
+    }
+    .form-control {
+        padding-left: 2.375rem;
+        background-color: #DCDCDC;
+        max-width: 58%;
+    }
+
+    .has-search .form-control-feedback {
+        position: absolute;
+        z-index: 2;
+        display: block;
+        width: 2.375rem;
+        height: 2.375rem;
+        line-height: 2.375rem;
+        text-align: center;
+        pointer-events: none;
+        color: #aaa;
+    }
+    .header-drop-down {
+        color: black;
+        background-color: white;
+        border: white;
+    }
+</style>

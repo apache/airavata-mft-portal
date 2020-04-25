@@ -1,5 +1,5 @@
 <template>
-        <div class="container">
+
             <div class="row">
                 <div class="col-8">
                     <h1 class="h4 mb-4">{{heading}}</h1>
@@ -51,7 +51,6 @@
                   </tbody>
                 </table>
             </div>
-        </div>
 
 </template>
 
