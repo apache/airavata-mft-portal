@@ -1,10 +1,29 @@
 <template>
 
             <div class="row">
-                <div class="col-8">
+                <div class="col-7">
                     <h1 class="h4 mb-4">{{heading}}</h1>
                 </div>
-                <!-- Add buttons here -->
+                <div class="col-4">
+                    <div class="btn-toolbar">
+                        <div class="btn-group mr-4" role="group">
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-outline-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort by</button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <a class="dropdown-item" href="#">Name</a>
+                                    <a class="dropdown-item" href="#">Size</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="btn-group mr-4" role="group">
+                            <button class="btn btn-sm btn-outline-secondary list"><i class="fa fa-bars"></i></button>
+                            <button class="btn btn-sm btn-outline-secondary list"><i class="fa fa-th"></i></button>
+                        </div>
+                        <div class="btn-group mr-4 new-unit" role="group">
+                            <button class="btn btn-info btn-sm"><i class="fa fa-plus plus-icon"></i>Add new unit</button>
+                        </div>
+                    </div>
+                </div>
                 <!-- Dialog box to show description of each storage unit -->
                 <b-modal class="modal-dialog modal-dialog-centered" :title="selectedStorage.name" id="description-dialog" hide-footer>
                     <div class="container">
@@ -76,7 +95,13 @@ export default {
 </script>
 
 <style>
-.description{
-    width: 70%;
-}
+    .new-unit{
+        width: 140px;
+    }
+    .plus-icon{
+        padding-right: 15px;
+    }
+    .list{
+        width: 40px;
+    }
 </style>

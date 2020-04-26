@@ -1,3 +1,4 @@
+{% load static %}
 {% load render_bundle from webpack_loader %}
 <!DOCTYPE html>
 <head>
@@ -15,7 +16,7 @@
                 <a class="navbar-brand" href="#">
                     <div class="row">
                         <div class="col-5">
-                            <img class="logo" src="/static/images/airavata-logo.png">
+                            <img class="logo" src="{% static 'images/airavata-logo.png' %}">
                         </div>
                         <div>
                             <div class="col-8">
