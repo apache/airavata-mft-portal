@@ -1,30 +1,46 @@
 <template>
-    <div class="container">
     <div class="row">
-        <div class="col-8">
+        <div class="col-7">
             <h1 class="h4 mb-4">{{heading}}</h1>
         </div>
-        <table class="table table-hover">
+        <div class="col-4">
+            <div class="btn-toolbar">
+                <div class="btn-group mr-4" role="group">
+                    <div class="dropdown">
+                        <button class="btn btn-sm btn-outline-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort by</button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Name</a>
+                            <a class="dropdown-item" href="#">Size</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-group mr-4" role="group">
+                    <button class="btn btn-sm btn-outline-secondary list"><i class="fa fa-bars"></i></button>
+                    <button class="btn btn-sm btn-outline-secondary list"><i class="fa fa-th"></i></button>
+                </div>
+            </div>
+        </div>
+        <table class="table table-hover main-table">
                 <thead>
                     <tr>
                       <th scope="col">Name</th>
                       <th scope="col">Size</th>
-                      <th scope="col">LastModified</th>
+                      <th scope="col">Last Modified</th>
                       <th scope="col"></th>
                     </tr>
                 </thead>
                   <tbody>
                     <tr v-for="resource in resources"
                         :key="resource.resourceId">
-                      <th scope="row">{{resource.name}}</th>
+                      <th scope="row"><i class="fa fa-folder resource-name-icon"></i>
+{{resource.name}}</th>
                       <td>{{resource.size}}</td>
                       <td>{{resource.lastModified}}</td>
-                      <td><b-button>Transfer</b-button></td>
+                      <td><b-button class="btn btn-info btn-sm transfer">Transfer</b-button></td>
                     </tr>
                   </tbody>
                 </table>
         </div>
-    </div>
 </template>
 
 <script>
@@ -41,5 +57,14 @@
 </script>
 
 <style scoped>
-
+    .main-table{
+        width: 83%!important;
+    }
+    .transfer {
+        width: 45%;
+    }
+    .resource-name-icon{
+        padding-right: 3%;
+        font-size:smaller;
+    }
 </style>

@@ -16,10 +16,10 @@ def storage(request):
 
 
 def resources(request, storage_id):
-    resource_json = [{"resourceId": "resource1", "name": "resource1"},
-                     {"resourceId": "resource1", "name": "resource1"},
-                     {"resourceId": "resource1", "name": "resource1"},
-                     {"resourceId": "resource1", "name": "resource1"}]
+    resource_json = [{"resourceId": "Spring project", "name": "Spring project", "size": "12 GB", "lastModified": "Jan 15, 2020"},
+                     {"resourceId": "Trial", "name": "Trial", "size": "12 GB", "lastModified": "Jan 15, 2020"},
+                     {"resourceId": "New", "name": "New", "size": "12 GB", "lastModified": "Jan 15, 2020"},
+                     {"resourceId": "Random testing", "name": "Random testing", "size": "12 GB", "lastModified": "Jan 15, 2020"}]
     return render(request, 'resources.html', {'bundle_name': 'resources',
                                               'data': json.dumps(resource_json),
                                               'title': 'Storage Unit > ' + storage_id})

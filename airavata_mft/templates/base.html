@@ -9,7 +9,6 @@
 {% render_bundle 'chunk-vendors' config='DEFAULT'%}
 {% render_bundle 'app' config='DEFAULT'%}
 <body>
-<!-- TODO : header and side navigation bar" -->
     <nav class="navbar navbar-light header shadow-sm">
         <div class="container-fluid">
             <div class="col-2">
@@ -20,28 +19,28 @@
                         </div>
                         <div>
                             <div class="col-8">
-                                <div class="row" style="height: 15px">
-                                    <span class="header-text" style="font-size: smaller">APACHE</span>
+                                <div class="row apache">
+                                    <span class="header-text apache-text">APACHE</span>
                                 </div>
-                                <div class="row">
-                                    <span class="header-text" style="font-size: larger">AIRAVATA</span>
+                                <div class="row airavata">
+                                    <span class="header-text airavata-text">AIRAVATA</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
-            <div class="col-8" style="padding-left: 0%">
+            <div class="col-8 search-div">
                 <div class="form-group has-search">
                     <span class="fa fa-search form-control-feedback"></span>
                     <input type="text" class="form-control" placeholder="Search">
                 </div>
             </div>
             <div class="col-2">
-                <div class="row">
+                <div class="row user-div">
                     <i class="fa fa-user-circle fa-2x"></i>
                     <div class="dropdown">
-                        <a class="btn dropdown-toggle header-drop-down" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">User name</a>
+                        <a class="btn dropdown-toggle header-drop-down" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="#">Logout</a>
                         </div>
@@ -51,24 +50,24 @@
         </div>
     </nav>
 
-
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-2" style="padding-top: 1.5%">
-            <nav class="nav flex-column">
-                <div style="background-color: lightblue"><a class="c-nav__item selected-nav" href="#"><b>Storage Units</b></a></div>
-                <div style="background-color: lightblue"><a class="c-nav__item" href="#"><b>Users</b></a></div>
-                <div style="background-color: lightblue"><a class="c-nav__item" href="#"><b>Agents</b></a></div>
-                <div style="background-color: lightblue"><a class="c-nav__item" href="#"><b>Audit</b></a></div>
-            </nav>
-        </div>
-        <div class="col-10" style="padding-top: 1.5%">
-            {% block app %}
-            {% endblock app %}
+<!-- side navigation bar (Needs to move to a vue template)-->
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-2" style="padding-top: 1.5%">
+                <nav class="nav flex-column">
+                    <a class="c-nav__item selected-nav" href="#"><i class="fa fa-database nav-icon"></i>Storage Units</a>
+                    <a class="c-nav__item" href="#"><i class="fa fa-users nav-icon"></i>Users</a>
+                    <a class="c-nav__item" href="#"><i class="fa fa-cogs nav-icon"></i>Agents</a>
+                    <a class="c-nav__item" href="#"><i class="fa fa-book nav-icon"></i>Audit</a>
+                </nav>
+            </div>
+            <div class="col-10 main-app">
+                {% block app %}
+                {% endblock app %}
+            </div>
         </div>
     </div>
 
-</div>
 </body>
 
 <style>
@@ -85,6 +84,10 @@
         font-size: 1rem;
         display: block;
         background-color: white;
+        padding-bottom: 0%;
+    }
+    .c-nav__item:hover{
+        background-color: #d6d8db!important;
     }
     .header {
         background-color: white;
@@ -122,5 +125,32 @@
         color: black;
         background-color: white;
         border: white;
+    }
+    .nav-icon {
+        padding-right: 10%;
+        padding-left: 14%;
+    }
+    .c-nav__item:hover{
+        color: #17a2b8;
+        text-decoration: none;
+        font-weight:bold;
+    }
+    .apache {
+        height: 0.7em;
+    }
+    .apache-text{
+       font-size: smaller;
+    }
+    .airavata-text{
+        font-size: larger;
+    }
+    .search-div{
+        padding-left: 0%;
+    }
+    .user-div{
+        margin-top: -10%;
+    }
+    .main-app{
+        padding-top: 1.5%
     }
 </style>
