@@ -60,8 +60,8 @@
                 <td>
                   <div class="progress storage-progress">
                       <!-- TODO: storage value should be picked from storage.occupied -->
-                      <div class="progress-bar red-bar" role="progressbar" style="width: 30%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
-                      <div class="progress-bar green-bar" role="progressbar" style="width: 70%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                      <div class="progress-bar red-bar" role="progressbar" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                      <div class="progress-bar green-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
                   </div>
                 </td>
                 <td>{{storage.lastModified}}</td>
@@ -115,9 +115,11 @@ export default {
     }
     .green-bar{
         background-color: #50c878;
+        width: 70%;
     }
     .red-bar{
         background-color: #cd5c5c;
+        width: 30%;
     }
     .storage-progress{
         width: 20%;
