@@ -4,7 +4,7 @@ module.exports = {
   publicPath: "/static/common/dist/",
   productionSourceMap: false,
   pages: {
-    app: "./js/main.js",
+    app: "./js/main.js"
   },
   configureWebpack: {
     plugins: [

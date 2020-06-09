@@ -4,12 +4,13 @@ const path = require("path");
 module.exports = {
   publicPath:
     process.env.NODE_ENV === "development"
-      ? "http://localhost:9000/static/airavata_mft_workspace/dist/"
+      ? "http://localhost:9001/static/airavata_mft_workspace/dist/"
       : "/static/airavata_mft_workspace/dist/",
   outputDir: "./static/airavata_mft_workspace/dist",
   productionSourceMap: false,
   pages: {
       'storage': './static/airavata_mft_workspace/js/entry-view-storage',
+      'resources': './static/airavata_mft_workspace/js/entry-view-resources',
   },
   configureWebpack: {
     plugins: [
@@ -35,7 +36,7 @@ module.exports = {
       });
   },
   devServer: {
-    port: 9000,
+    port: 9001,
     headers: {
       "Access-Control-Allow-Origin": "*"
     },

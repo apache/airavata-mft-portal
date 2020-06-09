@@ -1,6 +1,7 @@
 from . import views
-from django.urls import path
+from django.conf.urls import url
 
 urlpatterns = [
-    path('storage/', views.storage)
+    url(r'^storage/$', views.storage),
+    url(r'^storage/(?P<storage_id>[^/]+)/$', views.resources)
 ]
