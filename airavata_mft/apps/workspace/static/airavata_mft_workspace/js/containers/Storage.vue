@@ -9,14 +9,14 @@
                     <div class="dropdown">
                         <button class="btn btn-sm btn-outline-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort by</button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Name</a>
-                            <a class="dropdown-item" href="#">Size</a>
+                            <a class="dropdown-item" href="#" @click="sortBy('name')">Name</a>
+                            <a class="dropdown-item" href="#" @click="sortBy('size')">Size</a>
                         </div>
                     </div>
                 </div>
                 <div class="btn-group mr-4" role="group">
-                    <button class="btn btn-sm btn-outline-secondary list"><i class="fa fa-bars"></i></button>
-                    <button class="btn btn-sm btn-outline-secondary list"><i class="fa fa-th"></i></button>
+                    <button class="btn btn-sm btn-outline-secondary list"><i class="fa fa-bars" v-on:click="layout = 'listview'" v-bind:class="{ 'active': layout == 'listview'}"></i></button>
+                    <button class="btn btn-sm btn-outline-secondary list"><i class="fa fa-th" v-on:click="layout = 'grid'" v-bind:class="{ 'active': layout == 'grid'}"></i></button>
                 </div>
                 <div class="btn-group mr-4 new-unit" role="group">
                     <button class="btn btn-info btn-sm"><i class="fa fa-plus plus-icon"></i>Add new unit</button>
@@ -43,7 +43,7 @@
                 <b-button class="btn btn-sm btn-info browse" :href="selectedStorage.storageId">Browse</b-button>
             </div>
         </b-modal>
-        <table class="table table-hover main-table">
+        <table class="table table-hover main-table " >
         <thead>
             <tr>
               <th scope="col">Name</th>
@@ -83,12 +83,18 @@ export default {
             selectedStorage: this.initialStorageList[0]
         }
     },
+        layout: 'listview',
     methods: {
         showDescription(unit) {
             this.selectedStorage = unit
             this.$bvModal.show("description-dialog")
+        },
+        sortBy(prop){
+            this.storageList.sort((a,b)=>a[prop] < b[prop] ? -1 : 1)
         }
+
     }
+
 }
 </script>
 

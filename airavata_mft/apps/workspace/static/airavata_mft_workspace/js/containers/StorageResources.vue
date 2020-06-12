@@ -9,8 +9,8 @@
                     <div class="dropdown">
                         <button class="btn btn-sm btn-outline-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort by</button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Name</a>
-                            <a class="dropdown-item" href="#">Size</a>
+                            <a class="dropdown-item" href="#" @click="sortBy('name')">Name</a>
+                            <a class="dropdown-item" href="#" @click="sortBy('size')">Size</a>
                         </div>
                     </div>
                 </div>
@@ -53,6 +53,11 @@
                 heading: this.title
             }
         },
+        methods:{
+        sortBy(prop){
+            this.resources.sort((a,b)=>a[prop] < b[prop] ? -1 : 1)
+        }
+    }
     }
 </script>
 
