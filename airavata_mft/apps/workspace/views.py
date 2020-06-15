@@ -5,7 +5,7 @@ import json
 
 def storage(request):
     # TODO: grpc calls to backend
-    storage_json = [{"storageId": "ssh-storage1", "name": "One Drive", "size": "20B", "occupied": "10GB", "lastModified":"26, March 2020", "host": "localhost", "port": 22, "user": "root"},
+    storage_json = [{"storageId": "ssh-storage1", "name": "One Drive", "size": "20GB", "occupied": "10GB", "lastModified":"26, March 2020", "host": "localhost", "port": 22, "user": "root"},
                     {"storageId": "ssh-storage1", "name": "Google Drive", "size": "10GB", "occupied": "10GB", "lastModified":"26, March 2020", "host": "scp1", "port": 22, "user": "root"},
                     {"storageId": "ssh-storage1", "name": "Box", "size": "30GB", "occupied": "10GB", "lastModified":"26, March 2020", "host": "scp2", "port": 22, "user": "root"},
                     {"storageId": "ssh-storage1", "name": "Drop Box", "size": "40GB", "occupied": "10GB", "lastModified":"26, March 2020"}]
