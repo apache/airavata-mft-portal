@@ -9,14 +9,14 @@
                     <div class="dropdown">
                         <button class="btn btn-sm btn-outline-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sort by</button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Name</a>
-                            <a class="dropdown-item" href="#">Size</a>
+                            <a class="dropdown-item" href="#" @click="sortBy('name')">Name</a>
+                            <a class="dropdown-item" href="#" @click="sortBy('size')">Size</a>
                         </div>
                     </div>
                 </div>
                 <div class="btn-group mr-4" role="group">
-                    <button class="btn btn-sm btn-outline-secondary list"><i class="fa fa-bars"></i></button>
-                    <button class="btn btn-sm btn-outline-secondary list"><i class="fa fa-th"></i></button>
+                    <button class="btn btn-sm btn-outline-secondary list"><i class="fa fa-bars" v-on:click="layout = 'list'" v-bind:class="{ 'active': layout == 'list'}"></i></button>
+                    <button class="btn btn-sm btn-outline-secondary list"><i class="fa fa-th" v-on:click="layout = 'grid'" v-bind:class="{ 'active': layout == 'grid'}"></i></button>
                 </div>
                 <div class="btn-group mr-4 new-unit" role="group">
                     <button class="btn btn-info btn-sm"><i class="fa fa-plus plus-icon"></i>Add new unit</button>
@@ -43,7 +43,7 @@
                 <b-button class="btn btn-sm btn-info browse" :href="selectedStorage.storageId">Browse</b-button>
             </div>
         </b-modal>
-        <table class="table table-hover main-table">
+        <table v-if="layout === 'list'" class="table table-hover main-table " >
         <thead>
             <tr>
               <th scope="col">Name</th>
@@ -68,7 +68,16 @@
             </tr>
           </tbody>
         </table>
-    </div>
+            <div v-if="layout === 'grid'" class="table table-hover main-table " >
+                <!-- Icons of respective storages should be should be added  -->
+                <ul :style="gridStyle" class="card-list ">
+                <li v-for="storage in storageList " v-bind:key="storage.storageId" class="card-item " @click="showDescription(storage)">
+                    <br>{{ storage.name }}<br/>
+                    <br>{{ storage.size}}<br/>
+                </li>
+                </ul>
+            </div>
+        </div>
 </template>
 
 <script>
@@ -80,13 +89,25 @@ export default {
         return {
             storageList: this.initialStorageList,
             heading: this.title,
-            selectedStorage: this.initialStorageList[0]
+            selectedStorage: this.initialStorageList[0],
+            layout: 'grid',
+            numberOfColumns: 3
         }
+    },
+    computed: {
+    gridStyle() {
+      return {
+        gridTemplateColumns: `repeat(${this.numberOfColumns}, minmax(100px, 1fr))`
+      }
+    },
     },
     methods: {
         showDescription(unit) {
             this.selectedStorage = unit
             this.$bvModal.show("description-dialog")
+        },
+        sortBy(prop){
+            this.storageList.sort((a,b)=>a[prop] < b[prop] ? -1 : 1)
         }
     }
 }
@@ -127,5 +148,12 @@ export default {
     }
     .table-item{
         cursor: pointer;
+    }
+    .card-list {
+  display: grid;
+  list-style-type: none;
+    }
+    .card-item {
+  padding: 2em;
     }
 </style>
