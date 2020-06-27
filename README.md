@@ -12,6 +12,12 @@ Airavata Managed File Transfer is a standalone service to orchestrate data movem
     source venv/bin/activate
     pip install -r requirements.txt
     ```
+    Upgrade pip and install setuptools using the following commands if faced with errors while installing the requirments.txt file 
+    
+    ```
+    pip install --upgrade pip
+    pip install -r requirements.txt
+    ```
 2. Build js files
     ```
     ./build_js.sh
