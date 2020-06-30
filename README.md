@@ -27,6 +27,11 @@ Airavata Managed File Transfer is a standalone service to orchestrate data movem
     ```
     python manage.py runserver
     ```
+    Run webpack development server from  airavata_mft/apps/workspace
+    
+    ```
+    npm run serve
+    ```
 
 3. Point your browser to http://localhost:8000/workspace/storage/
 
