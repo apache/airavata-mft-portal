@@ -12,6 +12,12 @@ Airavata Managed File Transfer is a standalone service to orchestrate data movem
     source venv/bin/activate
     pip install -r requirements.txt
     ```
+    Upgrade pip and setuptools using the following commands if faced with errors while installing the requirments.txt file 
+    
+    ```
+    pip install --upgrade pip
+    pip install --upgrade setuptools
+    ```
 2. Build js files
     ```
     ./build_js.sh
@@ -20,6 +26,11 @@ Airavata Managed File Transfer is a standalone service to orchestrate data movem
 
     ```
     python manage.py runserver
+    ```
+    Run webpack development server from  airavata_mft/apps/workspace
+    
+    ```
+    npm run serve
     ```
 
 3. Point your browser to http://localhost:8000/workspace/storage/
