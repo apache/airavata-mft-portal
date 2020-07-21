@@ -11,6 +11,7 @@
 						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 							<a class="dropdown-item" href="#" @click="sortBy('name')">Name</a>
 							<a class="dropdown-item" href="#" @click="sortBy('size')">Size</a>
+							<a class="dropdown-item" href="#" @click="sortDateBy('lastModified')">Last Modified</a>
 						</div>
 					</div>
 				</div>
@@ -120,6 +121,9 @@ export default {
         showDescription(unit) {
             this.selectedStorage = unit
             this.$bvModal.show("description-dialog")
+        },
+		sortDateBy(prop){
+            this.storageList.sort((a,b)=>a[prop] > b[prop] ? -1 : 1)
         },
         sortBy(prop){
             this.storageList.sort((a,b)=>a[prop] < b[prop] ? -1 : 1)
