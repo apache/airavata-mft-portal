@@ -14,7 +14,7 @@
 		<nav class="navbar navbar-light header shadow-sm">
 			<div class="container-fluid">
 				<div class="col-2">
-					<a class="navbar-brand" href="#">
+					<a class="navbar-brand" href = "{% url 'workspace:storages' %}">
 						<div class="row">
 							<div class="col-5">
 								<img class="logo" src="{% static 'images/airavata-logo.png' %}">
@@ -56,7 +56,7 @@
 					<div class="row">
 						<div class="col-2" style="padding-top: 1.5%">
 							<nav class="nav flex-column">
-								<a class="c-nav__item selected-nav" href="#">
+								<a class="c-nav__item selected-nav" href= "{% url 'workspace:storages' %}">
 									<i class="fa fa-database nav-icon"></i>Storage Units
 								</a>
 								<a class="c-nav__item" href="#">
