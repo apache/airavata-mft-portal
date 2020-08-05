@@ -1,7 +1,7 @@
 <template>
 	<div class="row">
 		<div class="col-7">
-			<h1 class="h4 mb-4">{{heading}}</h1>
+			<h1 class="h4 mb-4">Storage Unit >{{heading}}</h1>
 		</div>
 		<div class="col-4">
 			<div class="btn-toolbar">
@@ -11,6 +11,7 @@
 						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
 							<a class="dropdown-item" href="#" @click="sortBy('name')">Name</a>
 							<a class="dropdown-item" href="#" @click="sortBy('size')">Size</a>
+							<a class="dropdown-item" href="#" @click="sortDateBy('lastModified')">Last Modified</a>
 						</div>
 					</div>
 				</div>
@@ -61,6 +62,9 @@
             }
         },
         methods:{
+		sortDateBy(prop){
+            this.resourcesList.sort((a,b)=>a[prop] > b[prop] ? -1 : 1)
+        },
         sortBy(prop){
             this.resources.sort((a,b)=>a[prop] < b[prop] ? -1 : 1)
         }
