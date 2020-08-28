@@ -33,10 +33,6 @@
 						</a>
 					</div>
 					<div class="col-8 search-div">
-						<div class="form-group has-search">
-							<span class="fa fa-search form-control-feedback"></span>
-							<input type="text" class="form-control" placeholder="Search">
-							</div>
 						</div>
 						<div class="col-2">
 							<div class="row user-div">
@@ -59,15 +55,9 @@
 								<a class="c-nav__item selected-nav" href= "{% url 'workspace:storages' %}">
 									<i class="fa fa-database nav-icon"></i>Storage Units
 								</a>
-								<a class="c-nav__item" href="#">
-									<i class="fa fa-users nav-icon"></i>Users
-								</a>
-								<a class="c-nav__item" href="#">
-									<i class="fa fa-cogs nav-icon"></i>Agents
-								</a>
-								<a class="c-nav__item" href="#">
-									<i class="fa fa-book nav-icon"></i>Audit
-								</a>
+								<a class="c-nav__item" href="{% url 'workspace:resources' %}">
+									<i class="fa fa-exchange nav-icon"></i> Transfers
+                                </a>
 							</nav>
 						</div>
 						<div class="col-10 main-app">

@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import StorageResources from "./containers/StorageResources"
+import Transfers from "./containers/Transfers"
 import { BootstrapVue } from 'bootstrap-vue'
 
 Vue.use(BootstrapVue);
@@ -9,9 +9,9 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 window.onload = function() {
     new Vue({
         render(h) {
-            return h(StorageResources, {
+            return h(Transfers, {
                 props: {
-                    resourcesList: this.resourcesList,
+                    transfersList: this.transfersList,
                     title: this.title
                 }
             });
@@ -19,16 +19,16 @@ window.onload = function() {
         },
         data() {
             return {
-                resourcesList: null,
+                transfersList: null,
             };
         },
         beforeMount() {
-            if (this.$el.dataset.resourcesList) {
-                this.resourcesList = JSON.parse(this.$el.dataset.resourcesList);
+            if (this.$el.dataset.transfersList) {
+                this.transfersList = JSON.parse(this.$el.dataset.transfersList);
             }
             if (this.$el.dataset.title) {
                 this.title = this.$el.dataset.title;
             }
         }
-    }).$mount("#resources")
+    }).$mount("#transfers")
 }
