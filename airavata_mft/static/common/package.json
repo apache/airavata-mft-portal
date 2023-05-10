@@ -27,7 +27,7 @@
     "webpack": "^4.28.4",
     "webpack-bundle-tracker": "^0.4.2-beta",
     "webpack-dev-middleware": "^3.5.1",
-    "webpack-dev-server": "^3.1.14"
+    "webpack-dev-server": "^3.11.3"
   },
   "eslintConfig": {
     "root": true,
