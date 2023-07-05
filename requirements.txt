@@ -1,5 +1,5 @@
 Django==3.0.4
 djangorestframework==3.11.0
-grpcio==1.27.2
+grpcio==1.53.0
 googleapis-common-protos==1.51.0
 django-webpack-loader==0.7.0
